@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEMIG - Atendimento ao Cliente</title>
+  <meta name="description" content="Acesse 2ª via, fatura digital, negociação de dívidas e fale com um atendente CEMIG.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #fff;
+    }
+    .page {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .bg {
+      position: absolute;
+      inset: 0;
+      background-image: url(data:image/jpeg;base64,EOF
+base64=$(cat /tmp/cemig.b64)
+cat >> /mnt/documents/index.html <<EOF
+$base64);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(2, 44, 34, 0.85), rgba(6, 78, 59, 0.80), rgba(2, 44, 34, 0.90));
+    }
+    .content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 420px;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .subtitle {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(209, 250, 229, 0.95);
+    }
+    .buttons {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #064e3b;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      backdrop-filter: blur(4px);
+    }
+    .btn:hover {
+      background: #fff;
+      transform: scale(1.02);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.2);
+    }
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #d1fae5;
+      color: #047857;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .btn:hover .icon {
+      background: #047857;
+      color: #fff;
+    }
+    .arrow {
+      font-size: 1.25rem;
+      color: #059669;
+    }
+    .btn-whatsapp {
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+      background: #10b981;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-whatsapp:hover {
+      background: #34d399;
+    }
+    .btn-whatsapp .icon {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .btn-whatsapp:hover .icon {
+      background: rgba(255,255,255,0.3);
+      color: #fff;
+    }
+    .footer {
+      margin-top: 32px;
+      font-size: 0.75rem;
+      color: rgba(209, 250, 229, 0.7);
+    }
+    svg { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="bg" aria-hidden="true"></div>
+    <div class="overlay" aria-hidden="true"></div>
+    <section class="content">
+      <h1>CEMIG</h1>
+      <p class="subtitle">Atendimento rápido e prático</p>
+
+      <div class="buttons">
+        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
+          <span class="btn-left">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></span>
+            2ª via
+          </span>
+          <span class="arrow">›</span>
+        </a>
+
+        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
+          <span class="btn-left">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            Fatura digital
+          </span>
+          <span class="arrow">›</span>
+        </a>
+
+        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
+          <span class="btn-left">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a5 5 0 0 0-7-3.48A5 5 0 0 0 4 9c0 2.76 2.24 5 5 5h9a4 4 0 0 0 4-4 4 4 0 0 0-4-4Z"/><path d="M12 14v8"/><path d="M8 22h8"/></svg></span>
+            Negociação de dívidas
+          </span>
+          <span class="arrow">›</span>
+        </a>
+
+        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
+          <span class="btn-left">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4"/><path d="M8 9v6"/><path d="M12 7v10"/><path d="M16 9v6"/><path d="M20 10v4"/></svg></span>
+            Fala com atendente
+          </span>
+          <span class="arrow">›</span>
+        </a>
+
+        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+          Falar no WhatsApp
+        </a>
+      </div>
+
+      <p class="footer">Links informativos. Para acessar serviços oficiais, visite o site da CEMIG.</p>
+    </section>
+  </main>
+</body>
+</html>
 
