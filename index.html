@@ -3,187 +3,357 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEMIG - Atendimento ao Cliente</title>
-  <meta name="description" content="Acesse 2ª via, fatura digital, negociação de dívidas e fale com um atendente CEMIG.">
+  <title>Relojoaria Guzzatti · Joalheria & Relógios</title>
+  <!-- Favicon (gerado inline via SVG + base64) -->
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiMxQzNBNkMiLz48cGF0aCBkPSJNMzIgMTBMNDIgMjRMMzIgMzhMMjIgMjRMMzIgMTB6IiBmaWxsPSIjRkVGRTk2Ii8+PHBhdGggZD0iTTMyIDU0TDIyIDQwTDMyIDI2TDQyIDQwTDMyIDU0eiIgZmlsbD0iI0ZGRkZGRiIvPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjYiIGZpbGw9IiNGRkQ3MDAiLz48cGF0aCBkPSJNMTAgMTBMNTQgMTBMMTUgMjRMMTMgMTB6IiBmaWxsPSIjRkZEOUIwIi8+PC9zdmc+" type="image/svg+xml">
+  <!-- Bootstrap 5 + ícones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #fff;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #faf7f2;
     }
-    .page {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    .bg-joia {
+      background: linear-gradient(145deg, #1C3A6C 0%, #2A4D7C 100%);
     }
-    .bg {
-      position: absolute;
-      inset: 0;
-      background-image: url(data:image/jpeg;base64,EOF
-base64=$(cat /tmp/cemig.b64)
-cat >> /mnt/documents/index.html <<EOF
-$base64);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    .text-ouro {
+      color: #D4AF37;
     }
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(2, 44, 34, 0.85), rgba(6, 78, 59, 0.80), rgba(2, 44, 34, 0.90));
-    }
-    .content {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      max-width: 420px;
-      padding: 48px 24px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    .subtitle {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: rgba(209, 250, 229, 0.95);
-    }
-    .buttons {
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 16px 20px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.95);
-      color: #064e3b;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-      backdrop-filter: blur(4px);
-    }
-    .btn:hover {
-      background: #fff;
-      transform: scale(1.02);
-      box-shadow: 0 14px 32px rgba(0,0,0,0.2);
-    }
-    .btn-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: #d1fae5;
-      color: #047857;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-    .btn:hover .icon {
-      background: #047857;
-      color: #fff;
-    }
-    .arrow {
-      font-size: 1.25rem;
-      color: #059669;
-    }
-    .btn-whatsapp {
-      justify-content: center;
-      gap: 10px;
-      margin-top: 8px;
-      background: #10b981;
-      color: #fff;
+    .btn-ouro {
+      background: #D4AF37;
       border: none;
-      cursor: pointer;
+      color: #1C3A6C;
+      font-weight: 600;
     }
-    .btn-whatsapp:hover {
-      background: #34d399;
+    .btn-ouro:hover {
+      background: #c09c2e;
+      color: #0f263f;
     }
-    .btn-whatsapp .icon {
-      background: rgba(255,255,255,0.2);
-      color: #fff;
+    .card-joia {
+      border: none;
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      transition: 0.25s ease;
     }
-    .btn-whatsapp:hover .icon {
-      background: rgba(255,255,255,0.3);
-      color: #fff;
+    .card-joia:hover {
+      box-shadow: 0 16px 40px rgba(28, 58, 108, 0.10);
+      transform: translateY(-4px);
     }
-    .footer {
-      margin-top: 32px;
-      font-size: 0.75rem;
-      color: rgba(209, 250, 229, 0.7);
+    .footer-link {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255,255,255,0.2);
     }
-    svg { width: 20px; height: 20px; }
+    .footer-link:hover {
+      color: #FFD966;
+      border-bottom-color: #FFD966;
+    }
+    .list-unstyled li i {
+      width: 1.6rem;
+      color: #D4AF37;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 60px;
+      height: 4px;
+      background: #D4AF37;
+      border-radius: 8px;
+    }
+    .politica-card {
+      background: #f5f1eb;
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+    }
+    .politica-card i {
+      font-size: 2rem;
+      color: #1C3A6C;
+    }
+    .badge-ano {
+      background: #D4AF37;
+      color: #1C3A6C;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+    }
+    .mapa-placeholder {
+      background: #e0d9cf;
+      border-radius: 24px;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: #3a3a3a;
+    }
+    @media (max-width: 576px) {
+      .politica-card {
+        padding: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <main class="page">
-    <div class="bg" aria-hidden="true"></div>
-    <div class="overlay" aria-hidden="true"></div>
-    <section class="content">
-      <h1>CEMIG</h1>
-      <p class="subtitle">Atendimento rápido e prático</p>
-
-      <div class="buttons">
-        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
-          <span class="btn-left">
-            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></span>
-            2ª via
-          </span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
-          <span class="btn-left">
-            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
-            Fatura digital
-          </span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
-          <span class="btn-left">
-            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a5 5 0 0 0-7-3.48A5 5 0 0 0 4 9c0 2.76 2.24 5 5 5h9a4 4 0 0 0 4-4 4 4 0 0 0-4-4Z"/><path d="M12 14v8"/><path d="M8 22h8"/></svg></span>
-            Negociação de dívidas
-          </span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn">
-          <span class="btn-left">
-            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4"/><path d="M8 9v6"/><path d="M12 7v10"/><path d="M16 9v6"/><path d="M20 10v4"/></svg></span>
-            Fala com atendente
-          </span>
-          <span class="arrow">›</span>
-        </a>
-
-        <a href="https://wa.me/message/W2QVTO554UQEI1" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
-          Falar no WhatsApp
-        </a>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg bg-joia py-3" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">
+        <i class="bi bi-gem text-ouro me-2"></i> Relojoaria Guzzatti
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navGuzzatti">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navGuzzatti">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#politicas">Políticas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
       </div>
+    </div>
+  </nav>
 
-      <p class="footer">Links informativos. Para acessar serviços oficiais, visite o site da CEMIG.</p>
-    </section>
-  </main>
+  <!-- HERO -->
+  <section class="py-5 bg-joia text-white" style="border-bottom: 6px solid #D4AF37;">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-md-7">
+          <span class="badge-ano mb-3 d-inline-block"><i class="bi bi-trophy me-2"></i>Desde 2001</span>
+          <h1 class="display-4 fw-bold lh-1">Joias & <span class="text-ouro">relógios</span> com tradição</h1>
+          <p class="lead mt-3 opacity-75" style="max-width: 500px;">Há mais de duas décadas presente em Criciúma, oferecendo peças únicas com brilho e elegância.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#sobre" class="btn btn-ouro btn-lg px-5 rounded-pill"><i class="bi bi-info-circle me-2"></i>Conheça</a>
+            <a href="#contato" class="btn btn-outline-light btn-lg px-5 rounded-pill"><i class="bi bi-whatsapp me-2"></i>Fale conosco</a>
+          </div>
+        </div>
+        <div class="col-md-5 text-center">
+          <i class="bi bi-clock-history" style="font-size: 6rem; color: #D4AF37; opacity: 0.7;"></i>
+          <i class="bi bi-diamond-fill ms-3" style="font-size: 5rem; color: #D4AF37; opacity: 0.5;"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE + INFOS -->
+  <section id="sobre" class="py-5">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-title mb-4">Sobre a Guzzatti</h2>
+          <p class="fs-5" style="color: #1e2b3c;"><strong>Relojoaria Guzzatti LTDA</strong> – CNPJ: 01.067.835/0001-21</p>
+          <p class="mb-3"><i class="bi bi-calendar-check me-2 text-ouro"></i> Situação cadastral ativa desde <strong>08/07/2001</strong></p>
+          <p><i class="bi bi-geo-alt-fill me-2 text-ouro"></i> Avenida Gabriel Zanette, 1455 – Prospera<br> Criciúma · SC · 88815-060</p>
+          <div class="d-flex gap-4 flex-wrap my-4">
+            <span><i class="bi bi-telephone-fill text-ouro me-2"></i> (48) 3431-8006</span>
+            <span><i class="bi bi-envelope-fill text-ouro me-2"></i> contato@guzzatti.com</span>
+          </div>
+          <p class="fst-italic" style="color: #3f4a5a;">Comércio varejista de artigos de joalheria, relógios finos e acessórios com atendimento personalizado.</p>
+          <div class="mt-3">
+            <i class="bi bi-star-fill text-ouro"></i>
+            <i class="bi bi-star-fill text-ouro"></i>
+            <i class="bi bi-star-fill text-ouro"></i>
+            <i class="bi bi-star-fill text-ouro"></i>
+            <i class="bi bi-star-fill text-ouro"></i>
+            <span class="ms-2 fw-semibold">+500 clientes satisfeitos</span>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card-joia p-4">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="bg-light p-3 rounded-4 text-center">
+                  <i class="bi bi-clock display-4 text-ouro"></i>
+                  <p class="fw-bold mt-2 mb-0">Tradição</p>
+                  <small>desde 2001</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bg-light p-3 rounded-4 text-center">
+                  <i class="bi bi-gem display-4 text-ouro"></i>
+                  <p class="fw-bold mt-2 mb-0">Joias finas</p>
+                  <small>certificadas</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bg-light p-3 rounded-4 text-center">
+                  <i class="bi bi-truck display-4 text-ouro"></i>
+                  <p class="fw-bold mt-2 mb-0">Envio rápido</p>
+                  <small>para todo Brasil</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bg-light p-3 rounded-4 text-center">
+                  <i class="bi bi-arrow-repeat display-4 text-ouro"></i>
+                  <p class="fw-bold mt-2 mb-0">Trocas</p>
+                  <small>até 30 dias</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLÍTICAS (separadas) -->
+  <section id="politicas" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="section-title mb-5">Políticas e informações</h2>
+      <div class="row g-4">
+        <!-- Política de Privacidade -->
+        <div class="col-md-6 col-lg-3">
+          <div class="politica-card h-100">
+            <i class="bi bi-shield-lock-fill mb-3"></i>
+            <h5 class="fw-bold">Privacidade</h5>
+            <p class="small">Seus dados são protegidos com total segurança. Não compartilhamos informações com terceiros.</p>
+            <a href="#" class="text-decoration-none text-ouro fw-semibold" data-bs-toggle="modal" data-bs-target="#modalPrivacidade">Detalhes <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Trocas e devoluções -->
+        <div class="col-md-6 col-lg-3">
+          <div class="politica-card h-100">
+            <i class="bi bi-arrow-left-right mb-3"></i>
+            <h5 class="fw-bold">Trocas & devoluções</h5>
+            <p class="small">Prazo de 30 dias para desistência. Produtos devem estar sem uso e na embalagem original.</p>
+            <a href="#" class="text-decoration-none text-ouro fw-semibold" data-bs-toggle="modal" data-bs-target="#modalTrocas">Detalhes <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Política de Envio -->
+        <div class="col-md-6 col-lg-3">
+          <div class="politica-card h-100">
+            <i class="bi bi-box-seam mb-3"></i>
+            <h5 class="fw-bold">Política de Envio</h5>
+            <p class="small">Enviamos para todo o Brasil via Correios e transportadoras. Prazo médio de 5 a 15 dias úteis.</p>
+            <a href="#" class="text-decoration-none text-ouro fw-semibold" data-bs-toggle="modal" data-bs-target="#modalEnvio">Detalhes <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Sobre (extra) -->
+        <div class="col-md-6 col-lg-3">
+          <div class="politica-card h-100">
+            <i class="bi bi-building mb-3"></i>
+            <h5 class="fw-bold">Sobre nós</h5>
+            <p class="small">Mais de 20 anos de história. Atendimento com excelência e produtos selecionados.</p>
+            <a href="#" class="text-decoration-none text-ouro fw-semibold" data-bs-toggle="modal" data-bs-target="#modalSobre">Detalhes <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASE + DESTAQUE -->
+  <div class="bg-joia py-4 text-white text-center">
+    <div class="container">
+      <p class="fs-4 fst-italic mb-0"><i class="bi bi-quote me-3 text-ouro"></i>“Elegância que atravessa gerações, brilho que nunca se apaga.”</p>
+    </div>
+  </div>
+
+  <!-- CONTATO / MAPA -->
+  <section id="contato" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h2 class="section-title mb-4">Entre em contato</h2>
+          <ul class="list-unstyled fs-6">
+            <li class="mb-3"><i class="bi bi-geo-alt-fill"></i> Av. Gabriel Zanette, 1455 – Prospera, Criciúma-SC</li>
+            <li class="mb-3"><i class="bi bi-telephone-fill"></i> (48) 3431-8006</li>
+            <li class="mb-3"><i class="bi bi-envelope-fill"></i> contato@guzzatti.com.br</li>
+            <li class="mb-3"><i class="bi bi-clock-fill"></i> Seg–Sex: 9h–18h · Sáb: 9h–13h</li>
+          </ul>
+          <div class="mt-4">
+            <span class="badge bg-ouro text-dark p-2 me-2"><i class="bi bi-whatsapp"></i> WhatsApp</span>
+            <span class="badge bg-ouro text-dark p-2"><i class="bi bi-instagram"></i> @guzzatti</span>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="mapa-placeholder">
+            <i class="bi bi-pin-map fs-1 mb-2"></i>
+            <p class="fw-semibold mb-0">📍 Avenida Gabriel Zanette, 1455 · Prospera</p>
+            <small>Referência: próximo à Praça do Imigrante</small>
+            <div class="mt-3 d-flex justify-content-center gap-3">
+              <span class="badge bg-joia text-white p-2"><i class="bi bi-arrow-right"></i> 88815-060</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER com todas políticas -->
+  <footer class="bg-joia text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="text-ouro fw-bold"><i class="bi bi-gem me-2"></i>Guzzatti</h5>
+          <p class="small opacity-75">CNPJ: 01.067.835/0001-21 · Situação cadastral: 08/07/2001</p>
+          <p class="small">Comércio varejista de joalheria e relojoaria com tradição em Criciúma.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-ouro">Políticas</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#modalPrivacidade">Privacidade</a></li>
+            <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#modalTrocas">Trocas e devoluções</a></li>
+            <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#modalEnvio">Política de Envio</a></li>
+            <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#modalSobre">Sobre</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-ouro">Contato</h6>
+          <p class="small mb-1"><i class="bi bi-telephone"></i> (48) 3431-8006</p>
+          <p class="small"><i class="bi bi-envelope"></i> contato@guzzatti.com</p>
+          <div class="mt-2">
+            <i class="bi bi-instagram fs-5 me-3 opacity-75"></i>
+            <i class="bi bi-facebook fs-5 me-3 opacity-75"></i>
+            <i class="bi bi-whatsapp fs-5 opacity-75"></i>
+          </div>
+        </div>
+      </div>
+      <hr class="opacity-25 my-3">
+      <p class="text-center small opacity-50 mb-0">&copy; 2026 Relojoaria Guzzatti LTDA · Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- MODAIS (Políticas separadas) -->
+  <div class="modal fade" id="modalPrivacidade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-joia text-white"><h5 class="modal-title"><i class="bi bi-shield-lock me-2"></i>Política de Privacidade</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">Seus dados pessoais são coletados apenas para processar pedidos e melhorar sua experiência. Não compartilhamos com terceiros. Você pode solicitar exclusão a qualquer momento.</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalTrocas" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-joia text-white"><h5 class="modal-title"><i class="bi bi-arrow-left-right me-2"></i>Trocas e devoluções</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">Prazo de 30 dias para desistência da compra. O produto deve estar sem sinais de uso, na embalagem original. Entre em contato para gerar a autorização de troca.</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalEnvio" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-joia text-white"><h5 class="modal-title"><i class="bi bi-box-seam me-2"></i>Política de Envio</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">Entregamos para todo o Brasil via Correios (PAC/SEDEX) e transportadoras parceiras. O prazo varia de 5 a 15 dias úteis. O rastreio é enviado por e-mail.</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalSobre" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-joia text-white"><h5 class="modal-title"><i class="bi bi-building me-2"></i>Sobre a Guzzatti</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">Fundada em 2001, a Relojoaria Guzzatti é referência em joias e relógios em Criciúma. Com atendimento personalizado e peças de qualidade, construímos uma história de confiança.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
